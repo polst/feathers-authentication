@@ -42,7 +42,7 @@ export default function setupSocketHandler (app, options, { feathersParams, prov
         const promise = service.remove(accessToken, { authenticated: true }).then(tokens => {
           debug(`Successfully logged out socket with accessToken`, accessToken);
 
-          app.emit(getEventName('logout'), tokens, {
+          app.emit('logout', tokens, {
             provider,
             socket,
             connection
@@ -180,7 +180,7 @@ export default function setupSocketHandler (app, options, { feathersParams, prov
             //   }
             // });
 
-            app.emit(getEventName('login'), tokens, {
+            app.emit('login', tokens, {
               provider,
               socket,
               connection
