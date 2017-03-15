@@ -11,6 +11,7 @@ declare namespace auth{
       header: string;
       entity: string;
       service: string;
+      socketEventPrefix: '';
       passReqToCallback: boolean;
       session: boolean;
       cookie: {
